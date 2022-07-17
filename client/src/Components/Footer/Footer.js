@@ -1,9 +1,6 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
 
 const Footer = () => {
-  const history = useHistory();
-
   return (
     <footer class="footer bg-dark pt-2 pb-1 fixed-bottom">
       <div class="container">

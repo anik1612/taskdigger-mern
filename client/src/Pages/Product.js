@@ -4,36 +4,18 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Row, Col, Image, ListGroup, Card } from 'react-bootstrap';
 import * as productAction from '../Actions/productAction';
 import ErrorMessage from '../Components/Message/errorMessage';
-import ProductReview from '../Components/productReview/ProductReview';
 import Rating from '../Components/Rating/Rating';
-import { Select, Button, FormControl, makeStyles, MenuItem } from '@material-ui/core/';
+import { Button } from '@material-ui/core/';
 import * as productConstants from '../Constants/productConstants';
 import SinglePageLoader from '../Components/Loader/SinglePageLoader';
 import { addToCart } from '../Actions/cartAction';
 import * as routes from '../Constants/routes';
 
-const useStyles = makeStyles((theme) => ({
-  typography: {
-    padding: theme.spacing(2),
-  },
-
-  formControl: {
-    margin: theme.spacing(1),
-    minWidth: 85,
-    top: -17,
-    left: 6,
-    position: 'absolute',
-  },
-  selectEmpty: {
-    marginTop: theme.spacing(2),
-  },
-}));
-
 const ProductDetails = ({ match, history }) => {
   const userAuthData = useSelector((state) => state.userLogin);
   const { userInfo } = userAuthData;
 
-  const [qty, setQty] = useState(1);
+  const [qty] = useState(1);
 
   const productData = useSelector((state) => state.Product);
   const reviewResponses = useSelector((state) => state.createReview);
@@ -41,7 +23,6 @@ const ProductDetails = ({ match, history }) => {
   const { error: createReviewError } = reviewResponses;
 
   const { loading, product, error } = productData;
-  const classes = useStyles();
 
   const dispatch = useDispatch();
 
@@ -106,12 +87,7 @@ const ProductDetails = ({ match, history }) => {
                   </ListGroup.Item>
 
                   <ListGroup.Item>
-                    <Button
-                      variant="contained"
-                      color="primary"
-                      onClick={addToCartHandler}
-                      fullWidth
-                    >
+                    <Button variant="contained" color="primary" onClick={addToCartHandler} fullWidth>
                       Add To Cart
                     </Button>
                   </ListGroup.Item>
