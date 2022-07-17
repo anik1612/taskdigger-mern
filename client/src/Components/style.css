@@ -1,0 +1,53 @@
+/* header */
+
+.bg-dark {
+  background-color: #1cbf73 !important;
+}
+.nav-link {
+  position: relative;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: black !important;
+}
+
+.cart {
+  position: absolute;
+  background-color: white;
+  width: 19px;
+  height: 20px;
+  border-radius: 50%;
+  color: black;
+  text-align: center;
+  top: 4px;
+  left: -5px;
+}
+
+/* SearchBox */
+
+form {
+  background-color: #fff;
+  border-radius: 100px;
+  padding: 0 20px;
+}
+
+@media (max-width: 700px) {
+  form {
+    flex-flow: row !important;
+    margin-top: 20px;
+  }
+}
+
+input {
+  border: 0;
+  font-size: 0.875rem;
+}
+input:focus {
+  box-shadow: none !important;
+}
+
+/* card style overwrite */
+.card {
+  border: 1px solid #1cbf734a !important;
+}
+/* card style overwrite */
