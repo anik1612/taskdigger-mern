@@ -52,19 +52,19 @@ const ProductDetails = ({ match, history }) => {
         <>
           <Row>
             <Col md={9}>
-              <Image src={product.productImage} alt={product.name} fluid className="d-block mx-auto rounded" />
+              <Image src={product?.productImage} alt={product?.name} fluid className="d-block mx-auto rounded" />
               <ListGroup variant="flush mt-5">
                 <ListGroup.Item>
-                  <h3>{product.name}</h3>
+                  <h3>{product?.name}</h3>
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <Rating
-                    value={product.averageRating}
-                    text={`${product.Reviews ? product.Reviews.length : 0} reviews`}
+                    value={product?.averageRating}
+                    text={`${product?.Reviews ? product?.Reviews.length : 0} reviews`}
                   />
                 </ListGroup.Item>
-                <ListGroup.Item>Price: ${product.price}</ListGroup.Item>
-                <ListGroup.Item>Description: {product.description}</ListGroup.Item>
+                <ListGroup.Item>Price: ${product?.price}</ListGroup.Item>
+                <ListGroup.Item>Description: {product?.description}</ListGroup.Item>
               </ListGroup>
             </Col>
             <Col md={3}>
@@ -74,7 +74,7 @@ const ProductDetails = ({ match, history }) => {
                     <Row>
                       <Col>Price:</Col>
                       <Col>
-                        <strong>${product.price}</strong>
+                        <strong>${product?.price}</strong>
                       </Col>
                     </Row>
                   </ListGroup.Item>
